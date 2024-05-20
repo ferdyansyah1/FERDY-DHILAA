@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Zodiak</title>
+</head>
+<body>
+    <h2>Game Zodiak</h2>
+    <label for="tanggal">Tanggal Lahir:</label>
+    <input type="number" id="tanggal" min="1" max="31"><br>
+    <label for="bulan">Bulan Lahir:</label>
+    <input type="number" id="bulan" min="1" max="12"><br>
+    <button onclick="cekZodiak()">Cek Zodiak</button>
+    <p id="hasil"></p>
+
+    <script>
+        function cekZodiak() {
+            let tgl = parseInt(document.getElementById('tanggal').value);
+            let bulan = parseInt(document.getElementById('bulan').value);
+
+            let zodiak = "";
+            let kesehatan = "Baik";
+            let asmara = "Harmonis";
+            let keuangan = "Stabil";
+            let karier = "Prospektif";
+
+            if ((tgl >= 21 && bulan == 3) || (tgl <= 19 && bulan == 4)) {
+                zodiak = "Aries";
+            } else if ((tgl >= 20 && bulan == 4) || (tgl <= 20 && bulan == 5)) {
+                zodiak = "Taurus";
+            } else if ((tgl >= 21 && bulan == 5) || (tgl <= 20 && bulan == 6)) {
+                zodiak = "Gemini";
+            } else if ((tgl >= 21 && bulan == 6) || (tgl <= 22 && bulan == 7)) {
+                zodiak = "Cancer";
+            } else if ((tgl >= 23 && bulan == 7) || (tgl <= 22 && bulan == 8)) {
+                zodiak = "Leo";
+            } else if ((tgl >= 23 && bulan == 8) || (tgl <= 22 && bulan == 9)) {
+                zodiak = "Virgo";
+            } else if ((tgl >= 23 && bulan == 9) || (tgl <= 22 && bulan == 10)) {
+                zodiak = "Libra";
+            } else if ((tgl >= 23 && bulan == 10) || (tgl <= 21 && bulan == 11)) {
+                zodiak = "Scorpio";
+            } else if ((tgl >= 22 && bulan == 11) || (tgl <= 21 && bulan == 12)) {
+                zodiak = "Sagittarius";
+            } else if ((tgl >= 22 && bulan == 12) || (tgl <= 19 && bulan == 1)) {
+                zodiak = "Capricorn";
+            } else if ((tgl >= 20 && bulan == 1) || (tgl <= 18 && bulan == 2)) {
+                zodiak = "Aquarius";
+            } else if ((tgl >= 19 && bulan == 2) || (tgl <= 20 && bulan == 3)) {
+                zodiak = "Pisces";
+            }
+
+            document.getElementById('hasil').innerText = 'Zodiak: ' + zodiak +
+                '\nKesehatan: ' + kesehatan +
+                '\nAsmara: ' + asmara +
+                '\nKeuangan: ' + keuangan +
+                '\nKarier: ' + karier;
+        }
+    </script>
+</body>
+</html>
